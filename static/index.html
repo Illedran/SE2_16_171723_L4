@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exercise Lab2</title>
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="page-header row">
+                <h1>Employee manager</h1>
+            </div>
+            <div class="row">
+                <form method="POST" action="/get" id="employee-search" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" name="id" class="form-control" id="employee-search-id" placeholder="Employee ID" autocomplete="true">
+                        <input id="employee-search-submit" type="button" class="btn btn-success" value="Search">
+                    </div>
+                </form>
+                <div id="search-results">
+                    <table class="table table-condensed table-hover">
+                        <tbody>
+                        <tr>
+                            <td><strong>ID:</strong></td>
+                            <td id="table-id"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Name:</strong></td>
+                            <td id="table-name"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Surname:</strong></td>
+                            <td id="table-surname"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Level:</strong></td>
+                            <td id="table-level"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Salary:</strong></td>
+                            <td id="table-salary"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="container"></div>
+                    <form method="POST" action="/remove" id="employee-remove" class="form-inline">
+                        <div class="form-group">
+                            <input type="hidden" name="id" class="form-control" id="employee-remove-id">
+                            <input id="employee-remove-submit" type="button" class="btn btn-danger" value="Delete">
+                        </div>
+                    </form>
+                    <p id="table-error"></p>
+                </div>
+            </div>
+            <div class="row">
+                <button type="button" id="show-form-employee-add" class="btn btn-primary">Add Employee</button>
+                <form method="POST" action="/add" id="employee-add">
+                    <div class="form-group">
+                        <input type="text" name="id" class="form-control" id="form-id" placeholder="Employee ID" autocomplete="true">
+                        <input type="text" name="name" class="form-control" id="form-name" placeholder="Employee Name" autocomplete="true">
+                        <input type="text" name="surname" class="form-control" id="form-surname" placeholder="Employee Surname" autocomplete="true">
+                        <input type="text" name="level" class="form-control" id="form-level" placeholder="Employee Level" autocomplete="true">
+                        <input type="text" name="salary" class="form-control" id="form-salary" placeholder="Employee Salary" autocomplete="true">
+                        <input id="employee-add-submit" type="button" class="btn btn-success" value="Add">
+                    </div>
+                    <p id="form-error"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/script.js" type="text/javascript"></script>
+<link href="/index.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</body>
+
+</html>
